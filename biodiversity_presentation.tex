@@ -1,0 +1,97 @@
+```latex
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\title{Endangered Species Analysis in National Parks}
+\author{Your Name}
+\date{May 2025}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Project Overview}
+    \begin{itemize}
+        \item \textbf{Goal}: Analyze conservation statuses and observation patterns of species in national parks.
+        \item \textbf{Datasets}:
+        \begin{itemize}
+            \item \texttt{species\_info.csv}: Species details (category, scientific name, conservation status).
+            \item \texttt{observations.csv}: Sightings over 7 days in 4 parks.
+        \end{itemize}
+        \item \textbf{Objectives}:
+        \begin{itemize}
+            \item Distribution of conservation statuses.
+            \item Identify high-risk categories.
+            \item Examine observation trends.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Data Description}
+    \begin{itemize}
+        \item \textbf{species\_info.csv}:
+        \begin{itemize}
+            \item 5824 species, 5541 unique scientific names.
+            \item Columns: \texttt{category}, \texttt{scientific\_name}, \texttt{common\_names}, \texttt{conservation\_status}.
+            \item Cleaning: Imputed ~5633 missing \texttt{conservation\_status} as "Not Listed".
+        \end{itemize}
+        \item \textbf{observations.csv}:
+        \begin{itemize}
+            \item 23281 sightings (after removing 15 duplicates).
+            \item Columns: \texttt{scientific\_name}, \texttt{park\_name}, \texttt{observations}.
+            \item 4 parks: Great Smoky Mountains, Yosemite, Bryce, Yellowstone.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Visualization: Conservation Status}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{conservation_status.png}
+        \caption{Excludes ~5633 "Not Listed" species to highlight conservation priorities.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Visualization: Status by Category}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{status_by_category.png}
+        \caption{Stacked bar plot showing conservation status distribution across categories.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Visualization: Observations by Park}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{observations_by_park.png}
+        \caption{Box plot of observation counts, highlighting variability across parks.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Key Findings}
+    \begin{itemize}
+        \item \textbf{Conservation Status}: ~5633/5824 species are "Not Listed"; ~191 are Species of Concern (~161), Endangered (~16), Threatened (~10).
+        \item \textbf{Category Patterns}: Vascular Plants (~4470) dominate, followed by Birds (~521), Mammals (~214). Mammals/Birds have higher Endangered/Threatened proportions.
+        \item \textbf{Observations}: Yellowstone has highest observations (~1.4M), suggesting greater survey effort or diversity. Average observations ~100–150 per species.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusions and Next Steps}
+    \begin{itemize}
+        \item \textbf{Conclusions}:
+        \begin{itemize}
+            \item Mammals and Birds are key conservation priorities due to higher endangerment.
+            \item Yellowstone’s high observations warrant further study.
+        \end{itemize}
+        \item \textbf{Next Steps}:
+        \begin{itemize}
+            \item Analyze observation counts for endangered species (rarity).
+            \item Investigate park-specific conservation needs.
+            \item Expand analysis to temporal trends or additional parks.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\end{document}
+```
